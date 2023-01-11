@@ -28,6 +28,7 @@ const numberOfBooks= () => {
 const addBook = () => {
     bookInput();
     numberOfBooks();
-    console.log(bookNumber)
+    console.log(bookNumber);
+    
 }
 
