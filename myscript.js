@@ -39,7 +39,9 @@ const showAllBooks = () => {
     let createEraseButton = document.createElement('button')
 
     createEraseButton.setAttribute('onclick', function(){createDiv.remove();})
-   
+    
+    
+    
     createParagraph.setAttribute('id', bookCount + 1000)
     createDiv.style.width = "100%";
     createDiv.style.height = "100%";
@@ -53,6 +55,8 @@ const showAllBooks = () => {
     document.getElementById(bookCount).appendChild(createParagraph)
     document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookPages[bookCount])
     document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookRead[bookCount])
+    
+    document.getElementById(bookCount).appendChild(createEraseButton)
 }
 
 const addBook = () => {
