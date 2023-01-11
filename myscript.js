@@ -40,8 +40,17 @@ const showAllBooks = () => {
       document.getElementById('theBookPages').innerHTML = totalBookPages;
     let totalBookRead = theLibrary.map(a => a.read)
     document.getElementById('read').innerHTML = totalBookRead;
+    createDiv()
 }
-
+const createDiv = () => {
+    let div = document.createElement("div");
+        div.style.width = "100px";
+        div.style.height = "100px";
+        div.style.background = "red";
+        div.style.color = "white";
+        div.innerHTML = totalBooksName;
+        document.getElementById("theLibrary").appendChild(div);
+}
 const addBook = () => {
     bookInput();
     numberOfBooks();
@@ -49,13 +58,11 @@ const addBook = () => {
     newBook = bookFactory(bookName, bookAuthor, bookPages, haveRead);
     addToLibrary(newBook);
     showAllBooks();
+
+
+
 }
 
-const para = document.createElement("p");
-const node = document.createTextNode(bookName);
-
-para.appendChild(node);
-document.getElementById("theLibrary").appendChild(para);
 
 
 
