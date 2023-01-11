@@ -23,8 +23,9 @@ const bookInput = () => {
       } 
 }
 const numberOfBooks= () => {
-    bookCount++
+    
     bookNumber = 'book' + bookCount
+    bookCount++
     return bookNumber;
 }
 const addToLibrary = (book) => {
@@ -50,8 +51,11 @@ const addBook = () => {
     showAllBooks();
 }
 
+const para = document.createElement("p");
+const node = document.createTextNode(bookName);
 
-
+para.appendChild(node);
+document.getElementById("theLibrary").appendChild(para);
 
 
 
