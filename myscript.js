@@ -44,8 +44,10 @@ const showAllBooks = () => {
     const eraseDiv = () => {
         document.getElementById(bookCount).remove();
     }
-
-    createEraseButton.setAttribute('onclick', 'document.getElementById(bookCount).remove()';})
+    
+    createEraseButton.setAttribute('id', "bookCount + 'eraser'")
+    let theEraseButton = document.getElementById("bookCount + 'eraser'")
+    theEraseButton.setAttribute('onclick', 'document.getElementById(bookCount).remove()';})
     
     
     
