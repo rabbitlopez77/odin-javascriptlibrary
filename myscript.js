@@ -59,11 +59,12 @@ const showAllBooks = () => {
     document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookRead[bookCount])
     
        let createEraseButton = document.createElement('button');
+    createEraseButton.style.width = "40%";
+       createEraseButton.style.height = "20%";
     
        createEraseButton.setAttribute('id', bookCount + 'eraser');
        
-       createEraseButton.style.width = "40%";
-       createEraseButton.style.height = "20%";
+       
 
        document.getElementById(bookCount).appendChild(createEraseButton);
        
