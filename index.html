@@ -10,7 +10,7 @@
 <body>
     <div class="title">Your Library</div>
     <div class="addBook" >
-        <form onsubmit="addBook()">
+        <form >
             <label for="bookName">Enter Book Name</label>
             <input type="text" id="bookName" name="bookName">
             <label for="bookAuthor">Enter the Book Author</label>
@@ -21,8 +21,8 @@
             <label for="haveRead">Have Read</label>
             <input type="radio" name="haveRead" id="haveNotRead">
             <label for="haveNotRead">Not Read</label>
-            <input type="submit" value="Add Book">
         </form>
+        <button onclick="addBook()">Add Book</button>
     </div>
     <div id="theLibrary">
         <div id="theBookName"></div>
