@@ -66,7 +66,7 @@ const showAllBooks = () => {
          let divErase = document.getElementById(bookCount);
         divErase.remove();
     }
-       createEraseButton.setAttribute('onclick', eraseDiv()})
+       createEraseButton.addEventListener("click", eraseDiv);
        document.getElementById(bookCount).appendChild(createEraseButton);
        
      
