@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Odin Javascript Library</title>
+</head>
+<body>
+    <div class="title">Your Library</div>
+    <div class="addBook" >
+        <form onsubmit="addBook()">
+            <label for="bookName">Enter Book Name</label>
+            <input type="text" id="bookName" name="bookName">
+            <label for="bookAuthor">Enter the Book Author</label>
+            <input type="text" name="bookAuthor" id="bookAuthor">
+            <label for="bookPages">Enter the Number of Pages</label>
+            <input type="text" name="bookPages" id="bookPages">
+            <input type="radio" name="haveRead" id="haveRead">
+            <label for="haveRead">Have Read</label>
+            <input type="radio" name="haveRead" id="haveNotRead">
+            <label for="haveNotRead">Not Read</label>
+            <input type="submit" value="Add Book">
+        </form>
+    </div>
+    <div id="theLibrary">
+        <div id="theBookName"></div>
+        <div id="theAuthor"></div>
+        <div id="theBookPages"></div>
+        <div id="haveRead"></div>
+    </div>
+    <script src="myscript.js"></script>
+</body>
+</html>
