@@ -30,6 +30,9 @@ const addToLibrary = (book) => {
     theLibrary.push(book)
 }
 const showAllBooks = () => {
+    
+    
+    
     let totalBooksName = theLibrary.map(a => a.name);
     let createParagraph = document.createElement('p');
     let createDiv = document.createElement("div");
@@ -37,8 +40,12 @@ const showAllBooks = () => {
     let totalBookPages = theLibrary.map(a => a.pages);
     let totalBookRead = theLibrary.map(a => a.read)
     let createEraseButton = document.createElement('button')
+    
+    const eraseDiv = () => {
+        createDiv.remove();
+    }
 
-    createEraseButton.setAttribute('onclick', function(){createDiv.remove();})
+    createEraseButton.setAttribute('onclick', 'eraseDiv()';})
     
     
     
