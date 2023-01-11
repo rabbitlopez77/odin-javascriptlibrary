@@ -41,15 +41,8 @@ const showAllBooks = () => {
     let totalBookRead = theLibrary.map(a => a.read)
     let createEraseButton = document.createElement('button')
     
-    const eraseDiv = () => {
-        document.getElementById(bookCount).remove();
-    }
-    
-    createEraseButton.setAttribute('id', bookCount + 'eraser')
-    let theEraseButton = document.getElementById("bookCount + 'eraser'")
-    theEraseButton.setAttribute('onclick', 'document.getElementById(bookCount).remove()';})
-    
-    
+   
+
     
     createParagraph.setAttribute('id', bookCount + 1000)
     createDiv.style.width = "100%";
@@ -64,6 +57,15 @@ const showAllBooks = () => {
     document.getElementById(bookCount).appendChild(createParagraph)
     document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookPages[bookCount])
     document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookRead[bookCount])
+    
+    
+     const eraseDiv = () => {
+        document.getElementById(bookCount).remove();
+    }
+    
+    createEraseButton.setAttribute('id', bookCount + 'eraser')
+    let theEraseButton = document.getElementById("bookCount + 'eraser'")
+    theEraseButton.setAttribute('onclick', eraseDiv();})
     
     document.getElementById(bookCount).appendChild(createEraseButton)
 }
