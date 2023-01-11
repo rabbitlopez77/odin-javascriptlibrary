@@ -1,0 +1,18 @@
+:root{
+    background-color: lightslategrey;
+    color: white;
+}
+#theLibrary{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 25%));
+    grid-template-rows: 100px 100px;
+    border-style: solid;
+    border-color: black;
+    width: 70%;
+    margin: auto;
+}
+.addBook {
+    display: grid;
+    grid-template-columns: minmax(100px, 0%);
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+}
