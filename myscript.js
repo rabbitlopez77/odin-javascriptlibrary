@@ -59,12 +59,14 @@ const showAllBooks = () => {
     document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookRead[bookCount])
     
        let createEraseButton = document.createElement('button');
+    
        createEraseButton.setAttribute('id', bookCount + 'eraser');
+    
     const eraseDiv = () => {
          let divErase = document.getElementById(bookCount);
         divErase.remove();
     }
-       createEraseButton.setAttribute('onclick', eraseDiv();})
+       createEraseButton.setAttribute('onclick', eraseDiv()})
        document.getElementById(bookCount).appendChild(createEraseButton);
        
      
