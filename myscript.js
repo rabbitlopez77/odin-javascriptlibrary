@@ -23,9 +23,7 @@ const bookInput = () => {
       } 
 }
 const numberOfBooks= () => {
-    
     bookNumber = 'book' + bookCount
-    bookCount++
     return bookNumber;
 }
 const addToLibrary = (book) => {
@@ -33,24 +31,28 @@ const addToLibrary = (book) => {
 }
 const showAllBooks = () => {
     let totalBooksName = theLibrary.map(a => a.name);
-      document.getElementById('theBookName').innerHTML = totalBooksName;
-    let totalBookAuthors = theLibrary.map(a => a.author)
-      document.getElementById('theAuthor').innerHTML = totalBookAuthors;
-    let totalBookPages = theLibrary.map(a => a.pages);
-      document.getElementById('theBookPages').innerHTML = totalBookPages;
-    let totalBookRead = theLibrary.map(a => a.read)
-    document.getElementById('read').innerHTML = totalBookRead;
-    createDiv()
-}
-const createDiv = () => {
+    let para = document.createElement('p');
+    para.setAttribute('id', bookCount + 1000)
     let div = document.createElement("div");
-        div.style.width = "100px";
-        div.style.height = "100px";
-        div.style.background = "red";
-        div.style.color = "white";
-        div.innerHTML = totalBooksName;
-        document.getElementById("theLibrary").appendChild(div);
+    div.style.width = "100%";
+    div.style.height = "100%";
+    div.style.background = "red";
+    div.style.color = "white";
+    div.style.display = 'grid'
+    div.setAttribute('id', bookCount)
+    div.innerHTML = totalBooksName[bookCount];
+    document.getElementById("theLibrary").appendChild(div);
+    let totalBookAuthors = theLibrary.map(a => a.author)
+    para.innerHTML = totalBookAuthors[bookCount];
+    document.getElementById(bookCount).appendChild(para)
+    let totalBookPages = theLibrary.map(a => a.pages);
+    document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookPages[bookCount])
+    let totalBookRead = theLibrary.map(a => a.read)
+    document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookRead[bookCount])
+
+    
 }
+
 const addBook = () => {
     bookInput();
     numberOfBooks();
@@ -58,6 +60,7 @@ const addBook = () => {
     newBook = bookFactory(bookName, bookAuthor, bookPages, haveRead);
     addToLibrary(newBook);
     showAllBooks();
+    bookCount++
 
 
 
