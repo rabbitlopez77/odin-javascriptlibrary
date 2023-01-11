@@ -37,7 +37,7 @@ const showAllBooks = () => {
     let totalBookPages = theLibrary.map(a => a.pages);
     let totalBookRead = theLibrary.map(a => a.read)
     let createEraseButton = document.createElement('button')
-    createEraseButton.setAttribute('id', bookCount + 1000)
+
     createEraseButton.setAttribute('onclick', eraseBook())
     const eraseBook = () => {
          createDiv.remove();   
