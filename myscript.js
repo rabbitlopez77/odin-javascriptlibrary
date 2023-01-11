@@ -38,10 +38,8 @@ const showAllBooks = () => {
     let totalBookRead = theLibrary.map(a => a.read)
     let createEraseButton = document.createElement('button')
 
-    createEraseButton.setAttribute('onclick', eraseBook())
-    const eraseBook = () => {
-         createDiv.remove();   
-    }
+    createEraseButton.setAttribute('onclick', function(){createDiv.remove();})
+   
     createParagraph.setAttribute('id', bookCount + 1000)
     createDiv.style.width = "100%";
     createDiv.style.height = "100%";
