@@ -59,16 +59,16 @@ const showAllBooks = () => {
     document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookRead[bookCount])
     
     
-     const eraseDiv = () => {
-         let divErase = document.getElementById(bookCount);
-        divErase.remove();
-    }
+//      const eraseDiv = () => {
+//          let divErase = document.getElementById(bookCount);
+//         divErase.remove();
+//     }
     
-    createEraseButton.setAttribute('id', bookCount + 'eraser')
-    let theEraseButton = document.getElementById("bookCount + 'eraser'")
-    theEraseButton.setAttribute('onclick', eraseDiv();})
+//     createEraseButton.setAttribute('id', bookCount + 'eraser')
+//     let theEraseButton = document.getElementById("bookCount + 'eraser'")
+//     theEraseButton.setAttribute('onclick', eraseDiv();})
     
-    document.getElementById(bookCount).appendChild(createEraseButton)
+//     document.getElementById(bookCount).appendChild(createEraseButton)
 }
 
 const addBook = () => {
