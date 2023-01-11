@@ -31,26 +31,30 @@ const addToLibrary = (book) => {
 }
 const showAllBooks = () => {
     let totalBooksName = theLibrary.map(a => a.name);
-    let para = document.createElement('p');
-    para.setAttribute('id', bookCount + 1000)
-    let div = document.createElement("div");
-    div.style.width = "100%";
-    div.style.height = "100%";
-    div.style.background = "red";
-    div.style.color = "white";
-    div.style.display = 'grid'
-    div.setAttribute('id', bookCount)
-    div.innerHTML = totalBooksName[bookCount];
-    document.getElementById("theLibrary").appendChild(div);
+    let createParagraph = document.createElement('p');
+    let createDiv = document.createElement("div");
     let totalBookAuthors = theLibrary.map(a => a.author)
-    para.innerHTML = totalBookAuthors[bookCount];
-    document.getElementById(bookCount).appendChild(para)
     let totalBookPages = theLibrary.map(a => a.pages);
-    document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookPages[bookCount])
     let totalBookRead = theLibrary.map(a => a.read)
+    let createEraseButton = document.createElement('button')
+    createEraseButton.setAttribute('id', bookCount + 1000)
+    createEraseButton.setAttribute('onclick', eraseBook())
+    const eraseBook = () => {
+         createDiv.remove();   
+    }
+    createParagraph.setAttribute('id', bookCount + 1000)
+    createDiv.style.width = "100%";
+    createDiv.style.height = "100%";
+    createDiv.style.background = "red";
+    createDiv.style.color = "white";
+    createDiv.style.display = 'grid'
+    createDiv.setAttribute('id', bookCount)
+    createDiv.innerHTML = totalBooksName[bookCount];
+    document.getElementById("theLibrary").appendChild(createDiv);
+    createParagraph.innerHTML = totalBookAuthors[bookCount];
+    document.getElementById(bookCount).appendChild(createParagraph)
+    document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookPages[bookCount])
     document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookRead[bookCount])
-
-    
 }
 
 const addBook = () => {
@@ -61,9 +65,6 @@ const addBook = () => {
     addToLibrary(newBook);
     showAllBooks();
     bookCount++
-
-
-
 }
 
 
