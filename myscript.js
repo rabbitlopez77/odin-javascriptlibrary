@@ -61,12 +61,10 @@ const showAllBooks = () => {
        let createEraseButton = document.createElement('button');
     
        createEraseButton.setAttribute('id', bookCount + 'eraser');
-    
-    const eraseDiv = () => {
-         let divErase = document.getElementById(bookCount);
-        divErase.remove();
-    }
-       createEraseButton.addEventListener("click", eraseDiv);
+       
+       createEraseButton.style.width = "40%";
+       createEraseButton.style.height = "20%";
+
        document.getElementById(bookCount).appendChild(createEraseButton);
        
      
