@@ -30,26 +30,20 @@ const addToLibrary = (book) => {
     theLibrary.push(book)
 }
 const showAllBooks = () => {
-    
-    
-    
     let totalBooksName = theLibrary.map(a => a.name);
     let createParagraph = document.createElement('p');
     let createDiv = document.createElement("div");
     let totalBookAuthors = theLibrary.map(a => a.author)
     let totalBookPages = theLibrary.map(a => a.pages);
     let totalBookRead = theLibrary.map(a => a.read)
-    
-    
-   
-
-    
     createParagraph.setAttribute('id', bookCount + 1000)
     createDiv.style.width = "100%";
     createDiv.style.height = "100%";
     createDiv.style.background = "red";
     createDiv.style.color = "white";
     createDiv.style.display = 'grid'
+    createDiv.style.borderRadius = '10px';
+    createDiv.style.textAlign = 'center';
     createDiv.setAttribute('id', bookCount)
     createDiv.innerHTML = totalBooksName[bookCount];
     document.getElementById("theLibrary").appendChild(createDiv);
@@ -57,23 +51,18 @@ const showAllBooks = () => {
     document.getElementById(bookCount).appendChild(createParagraph)
     document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookPages[bookCount])
     document.getElementById(bookCount).insertAdjacentHTML("beforeend", totalBookRead[bookCount])
-    
-       let createEraseButton = document.createElement('button');
+    let createEraseButton = document.createElement('button');
     createEraseButton.style.width = "40%";
-       createEraseButton.style.height = "20%";
-    
-       createEraseButton.setAttribute('id', bookCount + 'eraser');
-       
-       
-
-       document.getElementById(bookCount).appendChild(createEraseButton);
-       
-     
-      
+    createEraseButton.style.height = "20%";
+    createEraseButton.style.margin = 'auto';
+    createEraseButton.setAttribute('id', bookCount + 'eraser');
+    document.getElementById(bookCount).appendChild(createEraseButton);   
 }
 
 const addBook = () => {
     bookInput();
+    if(bookName === '' || bookAuthor === '' || bookPages === '')
+        return;
     numberOfBooks();
     let newBook =bookNumber;
     newBook = bookFactory(bookName, bookAuthor, bookPages, haveRead);
